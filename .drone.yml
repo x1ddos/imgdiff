@@ -1,0 +1,8 @@
+clone:
+  depth: 1
+build:
+  image: golang
+  commands:
+    - make deps
+    - make test
+    - make imgdiff
