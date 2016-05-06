@@ -15,15 +15,9 @@ LDFLAGS=-ldflags "-X main.version=$(VERSION)"
 imgdiff: $(SRCS)
 	go build -o imgdiff $(LDFLAGS) $(SRCS)
 
-test:
-	go test ./...
-
 prof:
 	go test -bench . -cpuprofile cpu.prof
 	go tool pprof -top imgdiff.test cpu.prof
-
-deps:
-	go get ./...
 
 release: $(RELEASES)
 

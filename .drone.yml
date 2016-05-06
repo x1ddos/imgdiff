@@ -1,8 +1,8 @@
 clone:
   depth: 1
 build:
-  image: golang
+  image: golang:1.6.2
   commands:
-    - make deps
-    - make test
+    - go get -d ./...
+    - go test ./...
     - make imgdiff
